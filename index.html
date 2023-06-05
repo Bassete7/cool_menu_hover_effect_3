@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu hover 3d effect</title>
+</head>
+
+<style>
+    *,::before,::after{
+        padding: 0;
+        margin: 0;
+        box-sizing: inherit;
+    }
+    html{
+        font-size: 62.5%;
+        box-sizing: border-box;
+    }
+    body{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #444444;
+    }
+
+    .container .list__links{
+        display: flex;
+        gap: 4rem;
+    }
+    .container .list__links .link{
+        list-style: none;
+        position: relative;
+    }
+    .container .list__links .link:hover a{
+        color: rgb(255, 204, 0);
+    }
+    .container .list__links a{
+        font-size: 2rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: white;
+    }
+
+    .container .list__links .link i:nth-child(1)::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: .8rem;
+        height: .8rem;
+        background: transparent;
+        border-top: 2px solid rgb(255, 204, 0);
+        border-left: 2px solid rgb(255, 204, 0);
+        opacity: 0;
+        transition: all .4s ease-out;
+    }
+    .container .list__links .link i:nth-child(1)::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: .8rem;
+        height: .8rem;
+        background: transparent;
+        border-top: 2px solid rgb(255, 204, 0);
+        border-right: 2px solid rgb(255, 204, 0);
+        opacity: 0;
+        transition: all .4s ease-out;
+    }
+
+    .container .list__links .link i:nth-child(2)::before{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: .8rem;
+        height: .8rem;
+        background: transparent;
+        border-bottom: 2px solid rgb(255, 204, 0);
+        border-left: 2px solid rgb(255, 204, 0);
+        opacity: 0;
+        transition: all .4s ease-out;
+    }
+    .container .list__links .link i:nth-child(2)::after{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: .8rem;
+        height: .8rem;
+        background: transparent;
+        border-bottom: 2px solid rgb(255, 204, 0);
+        border-right: 2px solid rgb(255, 204, 0);
+        opacity: 0;
+        transition: all .4s ease-out;
+    }
+    
+
+    .container .list__links .link:hover i:nth-child(1)::before{
+        left: -1rem;
+        top: -1rem;
+        opacity: 1;
+    }
+    .container .list__links .link:hover i:nth-child(1)::after{
+        top: -1rem;
+        right: -1rem;
+        opacity: 1;
+    }
+    .container .list__links .link:hover i:nth-child(2)::before{
+        bottom: -1rem;
+        left: -1rem;
+        opacity: 1;
+    }
+    .container .list__links .link:hover i:nth-child(2)::after{
+        bottom: -1rem;
+        right: -1rem;
+        opacity: 1;
+    }
+
+</style>
+
+<body>
+    <div class="container">
+        <ul class="list__links">
+            <li class="link">
+                <i></i>
+                <i></i>
+                <a href="#">home</a>
+            </li>
+            <li class="link">
+                <i></i>
+                <i></i>
+                <a href="#">about</a>
+            </li>
+            <li class="link">
+                <i></i>
+                <i></i>
+                <a href="#">services</a>
+            </li>
+            <li class="link">
+                <i></i>
+                <i></i>
+                <a href="#">contact</a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
